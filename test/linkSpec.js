@@ -1,0 +1,29 @@
+describe('link', function() {
+	var link;
+	beforeEach(function() {
+		link = new Link();	
+	});
+
+	it('insert', function() {
+		link.insert('rice', 'head');	
+		link.insert('quan', 'rice');
+		expect(link.find('rice').next.elem).toBe('quan');
+
+		link.insert('bread', 'rice');
+		expect(link.find('rice').next.elem).toBe('bread');
+
+		link.insert('milk', 'quan');
+		expect(link.find('quan').next.elem).toBe('milk');
+	});
+
+	it('find previous & remove', function() {
+		link.insert('rice', 'head');	
+		link.insert('quan', 'rice');
+		link.insert('bread', 'quan');
+
+		expect(link.findPrevious('bread').elem).toBe('quan');
+
+		link.remove('quan');
+		expect(link.find('rice').next.elem).toBe('bread');
+	});
+});
