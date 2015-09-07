@@ -16,12 +16,11 @@ describe('link', function() {
 		expect(link.find('quan').next.elem).toBe('milk');
 	});
 
-	it('find previous & remove', function() {
+	it('findLast remove', function() {
 		link.insert('rice', 'head');	
 		link.insert('quan', 'rice');
 		link.insert('bread', 'quan');
-
-		expect(link.findPrevious('bread').elem).toBe('quan');
+		expect(link.findLast().elem).toBe('bread');
 
 		link.remove('quan');
 		expect(link.find('rice').next.elem).toBe('bread');

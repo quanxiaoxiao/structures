@@ -56,13 +56,13 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-   // browsers: ['PhantomJS', 'PhantomJS_custom'],
+   //browsers: ['PhantomJS', 'PhantomJS_custom'],
 
     browsers: ['Chrome'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: true,
 
 		/*
 		customLaunchers: {
@@ -83,6 +83,6 @@ module.exports = function(config) {
       // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
       exitOnResourceError: true
     }
-		*/
+		.*/
   })
 }
